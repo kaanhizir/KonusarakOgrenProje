@@ -1,0 +1,40 @@
+*{
+  text-decoration: none;
+}
+
+.epsd {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .episode-card {
+    border: 1px solid yellow;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+  }
+  
+
+  .episode-card h2{
+    text-decoration: none;
+    color: green;
+    font-size: 20px;
+  }
+
+  .episode-card p{
+    text-decoration:none;
+    color: black;
+    font-size: 12px;
+  }
+
+  .episode-card img {
+    max-width: 100%;
+    border-radius: 4px;
+  }

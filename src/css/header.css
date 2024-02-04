@@ -1,0 +1,55 @@
+.header-container {
+    display: flex;
+    justify-content:first baseline;
+    align-items: center;
+    padding: 10px;
+    background-color: #b9b8a0;
+  }
+  
+  .header-container a {
+    text-decoration: none;
+    color: black;
+    
+  }
+  .ccc {
+    
+    padding-left: 80px;
+  }
+  .header-container a:hover {
+    border-bottom:1px yellow solid;
+    color: green;
+  }
+  .logo img {
+    max-width: 100px; /* Logo boyutunu ayarlayabilirsiniz */
+  }
+  
+  .sections a {
+    margin-right: 10px;
+  }
+
+  .search-bar {
+    margin-left: auto; 
+    margin-right: 20px;
+  }
+
+  .search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .btn-enter{
+    width: 40px;
+    height: 26px;
+    border: 1px green solid;
+    border-radius: 5px;
+    background-color: green;
+    color: yellow;
+  }
+
+  .btn-enter:hover{
+    
+    background-color: yellow;
+    color: green;
+  }

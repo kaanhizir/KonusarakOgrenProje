@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React , { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from "./component/header";
+import CharacterList from "./component/characters";
+import EpisodeList from "./component/episodes";
+import EpisodeDetail from "./component/episodeDetail";
+import CharacterDetail from "./component/charactersDetail";
 
-function App() {
+
+
+const App = () => {
+
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header onSearch={handleSearch}/>
+        <div className="chrc">
+          
+          <Routes>
+          <Route
+              path="/"
+              element={<CharacterList searchQuery={searchQuery} />}/>
+              <Route path="/characters" element={<CharacterList searchQuery={searchQuery} />} />
+            <Route path="/" element={<CharacterList />} />
+            <Route path="/characters" element={<CharacterList/>}/>
+            <Route path="/characters/:id" element={<CharacterDetail />} />
+          </Routes>
+          
+        </div>
+
+        <div className="epsd">
+        
+          <Routes>
+          <Route
+              path="/"
+              element={<EpisodeList searchQuery={searchQuery} />} 
+            />
+            <Route path="/episodes" element={<EpisodeList searchQuery={searchQuery} />} />
+            <Route path="/" element={<EpisodeList />} />
+            <Route path="/episodes" element={<EpisodeList/>}/>
+            <Route path="/episodes/:id" element={<EpisodeDetail />} />
+          </Routes>
+        </div>
+
+          
+        
+      </div>
+    </Router>
+    
   );
-}
+};
 
 export default App;
